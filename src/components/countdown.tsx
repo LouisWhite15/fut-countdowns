@@ -14,7 +14,8 @@ const Countdown = ({ countdownTo, title }: CountdownProps) => {
     days: 0,
     hours: 0,
     minutes: 0,
-    seconds: 0
+    seconds: 0,
+    isComplete: false
   });
 
   useEffect(() => {
@@ -29,9 +30,34 @@ const Countdown = ({ countdownTo, title }: CountdownProps) => {
   
       // Get the time remaining until the countdown date
       const distanceToDate = countdownDate.diff(currentTime, ['days', 'hours', 'minutes', 'seconds']);
-  
+      
+      // Determine whether the countdown in compelete or not
+      const isComplete = distanceToDate.seconds < 0;
+
       // Set the state to each new time
-      setState({ days: distanceToDate.days, hours: distanceToDate.hours, minutes: distanceToDate.minutes, seconds: Math.floor(distanceToDate.seconds) });
+      setState({ 
+        days: distanceToDate.days, 
+        hours: distanceToDate.hours, 
+        minutes: distanceToDate.minutes, 
+        seconds: Math.floor(distanceToDate.seconds), 
+        isComplete: isComplete });
+    }
+  }
+
+  const ActiveCountdown = () => {
+    return <div>{state.days}d {state.hours}h {state.minutes}m {state.seconds}s</div>
+  }
+
+  const CompletedCountdown = () => {
+    return <div>Out now!</div>
+  }
+
+  const Countdown = () => {
+    if (state.isComplete) {
+      return <CompletedCountdown />
+    }
+    else {
+      return <ActiveCountdown />
     }
   }
 
@@ -44,9 +70,7 @@ const Countdown = ({ countdownTo, title }: CountdownProps) => {
           </div>
         </Row>
         <Row className='justify-content-center'>
-          <div>
-            {state.days}d {state.hours}h {state.minutes}m {state.seconds}s
-          </div>
+          <Countdown />
         </Row>
       </Container>
     </div>
