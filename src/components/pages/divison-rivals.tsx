@@ -1,8 +1,8 @@
 import React from "react";
-import Countdown from "./shared/countdown";
-import * as countdownHelper from "../helpers/countdown-helper";
+import Countdown from "../shared/countdown";
+import * as countdownHelper from "../../helpers/countdown-helper";
 
-function DivisionRivals() {
+const DivisionRivals: React.FC = () => {
   return (
     <div>
       <Countdown 

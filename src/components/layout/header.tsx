@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { Collapse, Nav, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink } from "reactstrap";
 
 interface NavBarProps {
@@ -13,12 +14,12 @@ const Header: React.FC<NavBarProps> = ({ brandText }) => {
   return (
     <div>
       <Navbar color="light" light className="navbar shadow-sm p-3 mb-5 bg-white rounded" expand="md">
-        <NavbarBrand href="/">{brandText}</NavbarBrand>
+        <NavbarBrand tag={Link} to="/">{brandText}</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
             <NavItem>
-              <NavLink href="/division-rivals">Division Rivals</NavLink>
+              <NavLink tag={Link} to='/division-rivals'>Division Rivals</NavLink>
             </NavItem>
           </Nav>
         </Collapse> 

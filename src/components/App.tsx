@@ -1,9 +1,9 @@
 import React from 'react';
 import Header from './layout/header';
 import Footer from './layout/footer';
-import Index from '.';
+import Home from './pages';
 import { Route, Switch } from 'react-router-dom';
-import DivisionRivals from './divison-rivals';
+import DivisionRivals from './pages/divison-rivals';
 
 function App() {
   return (
@@ -13,8 +13,8 @@ function App() {
             brandText='FUT Countdowns'
           />
           <Switch>
-            <Route path='/' component={Index} exact />
-            <Route path='/division-rivals' component={DivisionRivals} />
+            <Route path='/' component={Home} exact />
+            <Route path='/division-rivals' component={DivisionRivals} exact/>
           </Switch>
           <Footer />
         </div>

@@ -1,9 +1,9 @@
 import React from "react";
 import { Container, Row } from "reactstrap";
-import Countdown from "./shared/countdown";
-import * as countdownHelper from "../helpers/countdown-helper";
+import Countdown from "../shared/countdown";
+import * as countdownHelper from "../../helpers/countdown-helper";
 
-function Index() {
+const Home: React.FC = () =>  {
   return (
     <div>
       <Container>
@@ -46,4 +46,4 @@ function Index() {
   )
 }
 
-export default Index;
+export default Home;
