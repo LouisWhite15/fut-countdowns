@@ -3,10 +3,17 @@ import ReactDOM from 'react-dom';
 import './index.scss';
 import App from './components/App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+
+const baseUrl = document.getElementsByTagName('base')[0].getAttribute('href');
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter basename={baseUrl || undefined}>
+      <Switch>
+        <Route path='/' component={App} />
+      </Switch>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
