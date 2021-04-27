@@ -7,7 +7,7 @@ type CountdownProps = {
   title: string
 };
 
-const Countdown = ({ countdownTo, title }: CountdownProps) => {
+const Countdown: React.FC<CountdownProps> = ({ countdownTo, title }) => {
 
   const [countdownDate] = useState(countdownTo);
   const [state, setState] = useState({

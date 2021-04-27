@@ -1,4 +1,5 @@
 import { DateTime } from "luxon";
+import parser from "cron-parser";
 
 export const getCommunityDate = () => {
   return DateTime.utc(2021, 4, 23, 17, 0, 0);
@@ -26,4 +27,16 @@ export const getLigueOneDate = () => {
 
 export const getUltimateDate = () => {
   return DateTime.utc(2021, 6, 4, 17, 0, 0);
+}
+
+export const getNextDivisionRivalsDate = () => {
+  
+  var options = {
+    utc: true,
+    tz: 'utc'
+  };
+
+  var interval = parser.parseExpression('0 9 * * Thu', options);
+
+  return DateTime.fromJSDate(interval.next().toDate());
 }
