@@ -8,10 +8,10 @@ function Index() {
     <div>
       <Container>
         <Row className='justify-content-center'>
-          <h3>Team of the Season Countdowns</h3>
+          <h3 className='text-center'>Team of the Season Countdowns</h3>
         </Row>
         <Row className='justify-content-center'>
-          <p>NOTE: Dates are speculative and based on previous years TOTS</p>
+          <p className='text-center'>NOTE: Dates are speculative and based on previous years TOTS</p>
         </Row>
         <br />
         <Countdown 
