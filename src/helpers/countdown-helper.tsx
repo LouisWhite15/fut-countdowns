@@ -36,7 +36,7 @@ export const getNextDivisionRivalsDate = () => {
     tz: 'utc'
   };
 
-  var interval = parser.parseExpression('0 9 * * Thu', options);
+  var interval = parser.parseExpression('0 7 * * Thu', options);
 
   return DateTime.fromJSDate(interval.next().toDate());
 }
