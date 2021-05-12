@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { DateTime } from 'luxon';
-import { Container, Row } from 'reactstrap';
+import { Row } from 'reactstrap';
 
 type CountdownProps = {
   countdownTo: DateTime,
@@ -61,17 +61,15 @@ const Countdown: React.FC<CountdownProps> = ({ countdownTo, title }) => {
   }
 
   return (
-    <div>
-      <Container>
-        <Row className='justify-content-center'>
-          <div className='title'>
-            <h5>{title}</h5>
-          </div>
-        </Row>
-        <Row className='justify-content-center'>
-          <Countdown />
-        </Row>
-      </Container>
+    <div className='countdown'>
+      <Row>
+        <div className='title'>
+          <h5>{title}</h5>
+        </div>
+      </Row>
+      <Row>
+        <Countdown />
+      </Row>
     </div>
   )
 }
