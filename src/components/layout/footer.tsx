@@ -9,7 +9,7 @@ const Footer: React.FC<FooterProps> = () => {
     <footer className='footer'>
       <div>
         <p>Author: Louis White 2021</p>
-        <p>If there is a new promo you would like to see added, raise an issue on GitHub <a href='https://github.com/LouisWhite15/fut-countdowns' rel='noreferrer'>here</a></p>
+        <p>If there is a new promo you would like to see added, raise an issue on GitHub <a href='https://github.com/LouisWhite15/fut-countdowns' target='_blank' rel='noreferrer'>here</a></p>
       </div>
     </footer>
   )
